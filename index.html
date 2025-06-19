@@ -12,25 +12,113 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #000;
             color: #fff;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            line-height: 1.6;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        /* Login Styles */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-card {
+            background: #111;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #333;
             width: 100%;
+            max-width: 400px;
+        }
+
+        .login-card h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #555;
+            background: #333;
+        }
+
+        button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background: #ddd;
+        }
+
+        button:disabled {
+            background: #444;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        .error {
+            color: #ff4444;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* App Styles */
+        .app-container {
+            display: none;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px 0;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
             border-bottom: 1px solid #333;
         }
 
@@ -39,92 +127,14 @@
             margin-bottom: 10px;
         }
 
-        .header p {
-            color: #ccc;
-            font-size: 0.9rem;
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
         }
 
-        /* Login Page Styles */
-        .login-container {
-            max-width: 400px;
-            margin: 100px auto;
-            padding: 40px;
-            background: #111;
-            border-radius: 10px;
-            border: 1px solid #333;
-        }
-
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        label {
-            font-weight: 500;
-            color: #ccc;
-        }
-
-        input[type="text"], input[type="password"], input[type="file"], textarea {
-            padding: 12px;
-            background: #222;
-            border: 1px solid #444;
-            border-radius: 5px;
-            color: #fff;
-            font-size: 16px;
-        }
-
-        input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
-            outline: none;
-            border-color: #666;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            background: #fff;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #ddd;
-            transform: translateY(-1px);
-        }
-
-        .btn:disabled {
-            background: #444;
-            color: #666;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .btn-secondary {
-            background: #333;
-            color: #fff;
-            border: 1px solid #555;
-        }
-
-        .btn-secondary:hover {
-            background: #444;
-        }
-
-        /* Tabs */
         .tabs {
             display: flex;
             margin-bottom: 30px;
@@ -136,17 +146,17 @@
             padding: 15px;
             text-align: center;
             cursor: pointer;
-            background: #111;
-            border: none;
-            color: #ccc;
-            font-size: 16px;
-            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
         }
 
         .tab.active {
-            background: #222;
-            color: #fff;
-            border-bottom: 2px solid #fff;
+            border-bottom-color: #fff;
+            background: #111;
+        }
+
+        .tab:hover {
+            background: #111;
         }
 
         .tab-content {
@@ -157,776 +167,794 @@
             display: block;
         }
 
-        /* QR Code Display */
-        .qr-display {
-            text-align: center;
-            margin: 20px 0;
-            padding: 20px;
+        .section {
             background: #111;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 12px;
             border: 1px solid #333;
+            margin-bottom: 20px;
         }
 
-        .qr-code {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 10px 0;
+        .section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
         }
 
-        /* Scanner */
-        .scanner-container {
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+
+        .qr-preview {
             text-align: center;
             margin: 20px 0;
-        }
-
-        #videoPreview {
-            width: 100%;
-            max-width: 400px;
-            height: 300px;
+            padding: 20px;
             background: #222;
-            border: 1px solid #444;
-            border-radius: 10px;
-            object-fit: cover;
+            border-radius: 8px;
         }
 
-        .scanner-controls {
-            margin: 15px 0;
+        .qr-preview canvas {
+            max-width: 100%;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .button-group {
             display: flex;
             gap: 10px;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* Results */
-        .result {
-            margin: 20px 0;
-            padding: 15px;
-            background: #111;
-            border-radius: 10px;
-            border: 1px solid #333;
+        .button-group button {
+            flex: 1;
+            min-width: 120px;
         }
 
-        .result h3 {
+        .file-input {
+            margin: 15px 0;
+        }
+
+        .file-input input[type="file"] {
+            background: #222;
+            border: 2px dashed #444;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #video {
+            max-width: 100%;
+            border-radius: 8px;
+            background: #222;
+        }
+
+        .result-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #fff;
+        }
+
+        .result-box h4 {
             margin-bottom: 10px;
             color: #fff;
         }
 
         .result-text {
-            background: #222;
-            padding: 10px;
-            border-radius: 5px;
             word-break: break-all;
-            color: #ccc;
             font-family: monospace;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
-        /* Alerts */
-        .alert {
-            padding: 12px;
+        .status {
+            padding: 10px;
+            border-radius: 6px;
             margin: 10px 0;
-            border-radius: 5px;
-            display: none;
+            text-align: center;
         }
 
-        .alert.success {
-            background: #1a5f1a;
-            border: 1px solid #2d8f2d;
-            color: #90ee90;
+        .status.success {
+            background: #004400;
+            border: 1px solid #008800;
         }
 
-        .alert.error {
-            background: #5f1a1a;
-            border: 1px solid #8f2d2d;
-            color: #ffcccb;
-        }
-
-        .alert.show {
-            display: block;
+        .status.error {
+            background: #440000;
+            border: 1px solid #880000;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
-            }
-
-            .header h1 {
-                font-size: 1.5rem;
-            }
-
-            .btn {
                 padding: 15px;
-                font-size: 18px;
             }
 
-            .scanner-controls {
+            .login-card {
+                padding: 30px 20px;
+            }
+
+            .section {
+                padding: 20px 15px;
+            }
+
+            .button-group {
                 flex-direction: column;
-                align-items: center;
             }
 
-            .scanner-controls .btn {
+            .button-group button {
                 width: 100%;
-                max-width: 300px;
+            }
+
+            .logout-btn {
+                position: static;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .header {
+                margin-top: 20px;
             }
         }
 
         .hidden {
             display: none !important;
         }
-
-        .upload-area {
-            border: 2px dashed #444;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            margin: 20px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .upload-area:hover {
-            border-color: #666;
-            background: #111;
-        }
-
-        .upload-area.dragover {
-            border-color: #fff;
-            background: #222;
-        }
     </style>
 </head>
 <body>
     <!-- Login Page -->
     <div id="loginPage" class="login-container">
-        <div class="header">
+        <div class="login-card">
             <h1>🔐 Secure QR</h1>
-            <p>Enter credentials to access</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-full">Login</button>
+                <div id="loginError" class="error hidden"></div>
+            </form>
         </div>
-        <form class="login-form" onsubmit="handleLogin(event)">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
-            </div>
-            <button type="submit" class="btn">Login</button>
-        </form>
-        <div id="loginAlert" class="alert error"></div>
     </div>
 
     <!-- Main App -->
-    <div id="mainApp" class="hidden">
+    <div id="appPage" class="app-container">
         <div class="container">
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+            
             <div class="header">
-                <h1>🔐 Secure QR Code Generator</h1>
-                <p>Encrypt messages and generate obfuscated QR codes</p>
-                <button onclick="logout()" class="btn btn-secondary" style="margin-top: 10px;">Logout</button>
+                <h1>🔐 Secure QR Code App</h1>
+                <p>Generate encrypted QR codes that standard scanners cannot read</p>
             </div>
 
             <div class="tabs">
-                <button class="tab active" onclick="switchTab('generate')">🔐 Generate</button>
-                <button class="tab" onclick="switchTab('scan')">📷 Scan</button>
+                <div class="tab active" data-tab="encrypt">🔐 Encrypt & Generate</div>
+                <div class="tab" data-tab="scan">📷 Scan & Decrypt</div>
             </div>
 
-            <!-- Generate Tab -->
-            <div id="generateTab" class="tab-content active">
-                <div class="form-group">
-                    <label for="message">Message to Encrypt:</label>
-                    <textarea id="message" placeholder="Enter your secret message here..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="encryptPassword">Encryption Password:</label>
-                    <input type="password" id="encryptPassword" placeholder="Enter encryption password">
-                </div>
-                <button onclick="generateQR()" class="btn">Generate Secure QR Code</button>
-                
-                <div id="qrResult" class="qr-display hidden">
-                    <h3>Generated QR Code:</h3>
-                    <div id="qrCode" class="qr-code"></div>
-                    <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                        <button onclick="downloadQR()" class="btn btn-secondary">Download PNG</button>
-                        <button onclick="copyEncrypted()" class="btn btn-secondary">Copy Encrypted Data</button>
+            <!-- Encrypt Tab -->
+            <div id="encrypt-tab" class="tab-content active">
+                <div class="section">
+                    <h3>Encrypt Message & Generate QR Code</h3>
+                    
+                    <div class="form-group">
+                        <label for="messageInput">Message to Encrypt</label>
+                        <textarea id="messageInput" placeholder="Enter your secret message here..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="encryptPassword">Encryption Password</label>
+                        <input type="password" id="encryptPassword" placeholder="Enter encryption password">
+                    </div>
+
+                    <button id="generateBtn" class="btn-full">Generate Secure QR Code</button>
+
+                    <div id="qrPreview" class="qr-preview hidden">
+                        <h4>Generated QR Code</h4>
+                        <canvas id="qrCanvas"></canvas>
+                        <div class="button-group" style="margin-top: 15px;">
+                            <button id="saveQrBtn">Save as PNG</button>
+                            <button id="copyEncryptedBtn">Copy Encrypted Data</button>
+                        </div>
+                    </div>
+
+                    <div id="encryptResult" class="result-box hidden">
+                        <h4>Encrypted Data</h4>
+                        <div id="encryptedText" class="result-text"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Scan Tab -->
-            <div id="scanTab" class="tab-content">
-                <div class="scanner-container">
-                    <h3>Scan QR Code</h3>
-                    <video id="videoPreview" autoplay muted playsinline></video>
-                    <canvas id="scanCanvas" style="display: none;"></canvas>
+            <div id="scan-tab" class="tab-content">
+                <div class="section">
+                    <h3>Scan QR Code from Camera</h3>
                     
-                    <div class="scanner-controls">
-                        <button id="startScanBtn" onclick="startScanning()" class="btn">Start Camera</button>
-                        <button id="stopScanBtn" onclick="stopScanning()" class="btn btn-secondary hidden">Stop Camera</button>
-                        <button id="manualDecryptBtn" onclick="manualDecryptFromCamera()" class="btn btn-secondary">Manual Decrypt</button>
+                    <div class="button-group">
+                        <button id="startCameraBtn">Start Camera</button>
+                        <button id="stopCameraBtn" disabled>Stop Camera</button>
                     </div>
+
+                    <div class="video-container">
+                        <video id="video" width="320" height="240" style="display: none;"></video>
+                        <canvas id="scanCanvas" style="display: none;"></canvas>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="decryptPassword">Decryption Password</label>
+                        <input type="password" id="decryptPassword" placeholder="Enter decryption password">
+                    </div>
+
+                    <button id="manualDecryptBtn" class="btn-full" style="margin-top: 10px;">Manual Decrypt from Camera</button>
+
+                    <div id="cameraStatus" class="status hidden"></div>
                 </div>
 
-                <div class="upload-area" onclick="document.getElementById('qrUpload').click()">
-                    <p>📁 Click or drag QR code image here</p>
-                    <input type="file" id="qrUpload" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+                <div class="section">
+                    <h3>Upload QR Code Image</h3>
+                    
+                    <div class="file-input">
+                        <input type="file" id="fileInput" accept="image/*">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="uploadDecryptPassword">Decryption Password</label>
+                        <input type="password" id="uploadDecryptPassword" placeholder="Enter decryption password">
+                    </div>
+
+                    <button id="uploadDecryptBtn" class="btn-full">Decrypt Uploaded QR</button>
+
+                    <div id="uploadStatus" class="status hidden"></div>
                 </div>
 
-                <div id="uploadedImagePreview" class="hidden" style="text-align: center; margin: 20px 0;">
-                    <h4>Uploaded Image:</h4>
-                    <img id="uploadedImage" style="max-width: 300px; max-height: 300px; border-radius: 10px; margin: 10px 0;">
-                    <br>
-                    <button onclick="manualDecrypt()" class="btn">Manual Decrypt</button>
-                </div>
-
-                <div class="form-group">
-                    <label for="decryptPassword">Decryption Password:</label>
-                    <input type="password" id="decryptPassword" placeholder="Enter decryption password">
-                </div>
-
-                <div id="scanResult" class="result hidden">
-                    <h3>Decrypted Message:</h3>
-                    <div id="decryptedMessage" class="result-text"></div>
-                    <button onclick="copyDecrypted()" class="btn btn-secondary" style="margin-top: 10px;">Copy Message</button>
+                <div id="decryptResult" class="result-box hidden">
+                    <h4>Decrypted Message</h4>
+                    <div id="decryptedText" class="result-text"></div>
+                    <button id="copyDecryptedBtn" style="margin-top: 10px;">Copy Message</button>
                 </div>
             </div>
-
-            <div id="alert" class="alert"></div>
         </div>
     </div>
 
-    <!-- External Libraries -->
+    <!-- Include external libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 
     <script>
         // Configuration
         const CONFIG = {
             username: 'admin',
             password: 'secure123',
-            qrVersion: 15,
-            errorCorrectionLevel: 'Q'
+            qrOptions: {
+                width: 300,
+                margin: 2,
+                color: {
+                    dark: '#000000',
+                    light: '#FFFFFF'
+                },
+                errorCorrectionLevel: 'M'
+            }
         };
 
         // Global variables
-        let currentStream = null;
+        let videoStream = null;
         let isScanning = false;
-        let scanInterval = null;
-        let encryptedData = '';
-        let uploadedImageData = null;
 
         // Authentication
-        function handleLogin(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            if (username === CONFIG.username && password === CONFIG.password) {
-                document.getElementById('loginPage').classList.add('hidden');
-                document.getElementById('mainApp').classList.remove('hidden');
-                showAlert('Login successful!', 'success');
-            } else {
-                const loginAlert = document.getElementById('loginAlert');
-                loginAlert.textContent = 'Invalid credentials. Try admin/secure123';
-                loginAlert.classList.add('show');
-                setTimeout(() => loginAlert.classList.remove('show'), 3000);
+        class Auth {
+            static login(username, password) {
+                return username === CONFIG.username && password === CONFIG.password;
+            }
+
+            static showApp() {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('appPage').style.display = 'block';
+            }
+
+            static showLogin() {
+                document.getElementById('loginPage').style.display = 'flex';
+                document.getElementById('appPage').style.display = 'none';
             }
         }
 
-        function logout() {
-            document.getElementById('loginPage').classList.remove('hidden');
-            document.getElementById('mainApp').classList.add('hidden');
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
-            stopScanning();
-        }
-
-        // Tab switching
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
-            document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
-            document.getElementById(tabName + 'Tab').classList.add('active');
-            
-            if (tabName === 'scan') {
-                // Reset scan tab when switching to it
-                stopScanning();
-            }
-        }
-
-        // Encryption functions
-        function encryptMessage(message, password) {
-            try {
-                const salt = CryptoJS.lib.WordArray.random(16);
-                const key = CryptoJS.PBKDF2(password, salt, {
-                    keySize: 4, // 128 bits
-                    iterations: 10000,
-                    hasher: CryptoJS.algo.SHA256
-                });
-                
-                const iv = CryptoJS.lib.WordArray.random(16);
-                const encrypted = CryptoJS.AES.encrypt(message, key, {
-                    iv: iv,
-                    mode: CryptoJS.mode.CBC,
-                    padding: CryptoJS.pad.Pkcs7
-                });
-                
-                const combined = salt.concat(iv).concat(encrypted.ciphertext);
-                return CryptoJS.enc.Base64.stringify(combined);
-            } catch (error) {
-                console.error('Encryption error:', error);
-                throw new Error('Encryption failed');
-            }
-        }
-
-        function decryptMessage(encryptedData, password) {
-            try {
-                const combined = CryptoJS.enc.Base64.parse(encryptedData);
-                const salt = CryptoJS.lib.WordArray.create(combined.words.slice(0, 4));
-                const iv = CryptoJS.lib.WordArray.create(combined.words.slice(4, 8));
-                const ciphertext = CryptoJS.lib.WordArray.create(combined.words.slice(8));
-                
-                const key = CryptoJS.PBKDF2(password, salt, {
-                    keySize: 4, // 128 bits
-                    iterations: 10000,
-                    hasher: CryptoJS.algo.SHA256
-                });
-                
-                const decrypted = CryptoJS.AES.decrypt(
-                    { ciphertext: ciphertext },
-                    key,
-                    {
+        // Encryption utilities
+        class CryptoUtil {
+            static encrypt(message, password) {
+                try {
+                    // Create salt and IV
+                    const salt = CryptoJS.lib.WordArray.random(128/8);
+                    const iv = CryptoJS.lib.WordArray.random(128/8);
+                    
+                    // Derive key using PBKDF2
+                    const key = CryptoJS.PBKDF2(password, salt, {
+                        keySize: 256/32,
+                        iterations: 1000
+                    });
+                    
+                    // Encrypt the message
+                    const encrypted = CryptoJS.AES.encrypt(message, key, {
                         iv: iv,
                         mode: CryptoJS.mode.CBC,
                         padding: CryptoJS.pad.Pkcs7
-                    }
-                );
-                
-                return decrypted.toString(CryptoJS.enc.Utf8);
-            } catch (error) {
-                console.error('Decryption error:', error);
-                throw new Error('Decryption failed - check password');
-            }
-        }
+                    });
 
-        // QR Code generation with obfuscation
-        function generateQR() {
-            const message = document.getElementById('message').value;
-            const password = document.getElementById('encryptPassword').value;
-            
-            if (!message.trim()) {
-                showAlert('Please enter a message to encrypt', 'error');
-                return;
-            }
-            
-            if (!password) {
-                showAlert('Please enter an encryption password', 'error');
-                return;
-            }
-            
-            try {
-                encryptedData = encryptMessage(message, password);
-                
-                // Create QR code using qrcode-generator library
-                const qr = qrcode(0, 'Q'); // Version 0 (auto), Error correction level Q
-                qr.addData(encryptedData);
-                qr.make();
-                
-                // Create canvas and draw QR code
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                const moduleCount = qr.getModuleCount();
-                const cellSize = 8;
-                const margin = 4;
-                
-                canvas.width = canvas.height = (moduleCount * cellSize) + (margin * 2 * cellSize);
-                
-                // Fill background white
-                ctx.fillStyle = '#FFFFFF';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                // Draw QR modules
-                ctx.fillStyle = '#000000';
-                for (let row = 0; row < moduleCount; row++) {
-                    for (let col = 0; col < moduleCount; col++) {
-                        if (qr.isDark(row, col)) {
-                            ctx.fillRect(
-                                (col * cellSize) + (margin * cellSize),
-                                (row * cellSize) + (margin * cellSize),
-                                cellSize,
-                                cellSize
-                            );
-                        }
-                    }
-                }
-                
-                // Apply obfuscation
-                obfuscateQR(canvas);
-                
-                // Display result
-                const qrCode = document.getElementById('qrCode');
-                qrCode.innerHTML = '';
-                qrCode.appendChild(canvas);
-                
-                document.getElementById('qrResult').classList.remove('hidden');
-                showAlert('QR code generated successfully!', 'success');
-                
-            } catch (error) {
-                console.error('QR Generation Error:', error);
-                showAlert('Error generating QR code: ' + error.message, 'error');
-            }
-        }
-
-        function obfuscateQR(canvas) {
-            const ctx = canvas.getContext('2d');
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const data = imageData.data;
-            
-            // Apply custom masking pattern to make it unreadable by standard scanners
-            // This is a simplified obfuscation - in production you'd want more sophisticated methods
-            const maskPattern = 0x5; // Custom mask pattern
-            
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
-                    const idx = (y * canvas.width + x) * 4;
+                    // Combine salt, iv, and encrypted data
+                    const combined = {
+                        salt: salt.toString(),
+                        iv: iv.toString(),
+                        encrypted: encrypted.toString()
+                    };
                     
-                    // Apply mask based on position
-                    if ((x + y) % 3 === maskPattern % 3) {
-                        if (data[idx] === 0) { // If black pixel
-                            // Randomly decide whether to flip it
-                            if (Math.random() > 0.7) {
-                                data[idx] = 255;     // R
-                                data[idx + 1] = 255; // G
-                                data[idx + 2] = 255; // B
+                    return btoa(JSON.stringify(combined));
+                } catch (error) {
+                    console.error('Encryption error:', error);
+                    throw new Error('Failed to encrypt message: ' + error.message);
+                }
+            }
+
+            static decrypt(encryptedData, password) {
+                try {
+                    // Parse the encrypted data
+                    const combined = JSON.parse(atob(encryptedData));
+                    
+                    if (!combined.salt || !combined.iv || !combined.encrypted) {
+                        throw new Error('Invalid encrypted data format');
+                    }
+
+                    const salt = CryptoJS.enc.Hex.parse(combined.salt);
+                    const iv = CryptoJS.enc.Hex.parse(combined.iv);
+
+                    // Derive the same key
+                    const key = CryptoJS.PBKDF2(password, salt, {
+                        keySize: 256/32,
+                        iterations: 1000
+                    });
+
+                    // Decrypt
+                    const decrypted = CryptoJS.AES.decrypt(combined.encrypted, key, {
+                        iv: iv,
+                        mode: CryptoJS.mode.CBC,
+                        padding: CryptoJS.pad.Pkcs7
+                    });
+
+                    const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
+                    
+                    if (!decryptedText) {
+                        throw new Error('Invalid password or corrupted data');
+                    }
+
+                    return decryptedText;
+                } catch (error) {
+                    console.error('Decryption error:', error);
+                    if (error.message.includes('Invalid password')) {
+                        throw new Error('Incorrect password');
+                    }
+                    throw new Error('Failed to decrypt: Invalid data or wrong password');
+                }
+            }
+        }
+
+        // QR Code utilities
+        class QRUtil {
+            static async generateQR(data) {
+                try {
+                    const canvas = document.getElementById('qrCanvas');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Create QR code using qrcode-generator
+                    const qr = qrcode(0, 'M');
+                    qr.addData(data);
+                    qr.make();
+                    
+                    // Set canvas size
+                    const size = 300;
+                    canvas.width = size;
+                    canvas.height = size;
+                    
+                    // Clear canvas
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(0, 0, size, size);
+                    
+                    // Draw QR code
+                    const moduleCount = qr.getModuleCount();
+                    const cellSize = size / moduleCount;
+                    
+                    ctx.fillStyle = '#000000';
+                    for (let row = 0; row < moduleCount; row++) {
+                        for (let col = 0; col < moduleCount; col++) {
+                            if (qr.isDark(row, col)) {
+                                ctx.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
                             }
                         }
                     }
-                }
-            }
-            
-            ctx.putImageData(imageData, 0, 0);
-        }
-
-        // QR Code scanning
-        async function startScanning() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ 
-                    video: { 
-                        facingMode: 'environment',
-                        width: { ideal: 640 },
-                        height: { ideal: 480 }
-                    } 
-                });
-                
-                currentStream = stream;
-                const video = document.getElementById('videoPreview');
-                video.srcObject = stream;
-                
-                document.getElementById('startScanBtn').classList.add('hidden');
-                document.getElementById('stopScanBtn').classList.remove('hidden');
-                
-                isScanning = true;
-                scanInterval = setInterval(scanFrame, 500);
-                
-                showAlert('Camera started - point at QR code', 'success');
-            } catch (error) {
-                showAlert('Camera access denied or not available', 'error');
-            }
-        }
-
-        function stopScanning() {
-            if (currentStream) {
-                currentStream.getTracks().forEach(track => track.stop());
-                currentStream = null;
-            }
-            
-            if (scanInterval) {
-                clearInterval(scanInterval);
-                scanInterval = null;
-            }
-            
-            isScanning = false;
-            
-            document.getElementById('startScanBtn').classList.remove('hidden');
-            document.getElementById('stopScanBtn').classList.add('hidden');
-            
-            const video = document.getElementById('videoPreview');
-            video.srcObject = null;
-        }
-
-        function scanFrame() {
-            if (!isScanning) return;
-            
-            const video = document.getElementById('videoPreview');
-            const canvas = document.getElementById('scanCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            if (video.readyState === video.HAVE_ENOUGH_DATA) {
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                ctx.drawImage(video, 0, 0);
-                
-                try {
-                    const qrData = decodeQRFromCanvas(canvas);
-                    if (qrData) {
-                        processScannedData(qrData);
-                        stopScanning();
-                    }
-                } catch (error) {
-                    // Continue scanning if no QR found
-                }
-            }
-        }
-
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = document.getElementById('uploadedImage');
-                img.src = e.target.result;
-                uploadedImageData = e.target.result;
-                
-                document.getElementById('uploadedImagePreview').classList.remove('hidden');
-                showAlert('Image uploaded - click "Decrypt QR Code" to decode', 'success');
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function manualDecryptFromCamera() {
-            if (!currentStream) {
-                showAlert('Please start camera first', 'error');
-                return;
-            }
-            
-            const password = document.getElementById('decryptPassword').value;
-            if (!password) {
-                showAlert('Please enter decryption password first', 'error');
-                return;
-            }
-            
-            const video = document.getElementById('videoPreview');
-            const canvas = document.getElementById('scanCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            if (video.readyState === video.HAVE_ENOUGH_DATA) {
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                ctx.drawImage(video, 0, 0);
-                
-                try {
-                    const qrData = decodeQRFromCanvas(canvas);
-                    if (qrData) {
-                        processScannedData(qrData);
-                        showAlert('Manual decrypt from camera successful!', 'success');
-                    } else {
-                        showAlert('No QR code detected in camera view - try adjusting position', 'error');
-                    }
-                } catch (error) {
-                    showAlert('Manual decrypt failed: ' + error.message, 'error');
-                }
-            } else {
-                showAlert('Camera not ready, please wait a moment', 'error');
-            }
-        }
-
-        function manualDecrypt() {
-            if (!uploadedImageData) {
-                showAlert('Please upload an image first', 'error');
-                return;
-            }
-            
-            const img = new Image();
-            img.onload = function() {
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0);
-                
-                try {
-                    const qrData = decodeQRFromCanvas(canvas);
-                    if (qrData) {
-                        processScannedData(qrData);
-                    } else {
-                        showAlert('No QR code found in image', 'error');
-                    }
-                } catch (error) {
-                    showAlert('Failed to decode QR code: ' + error.message, 'error');
-                }
-            };
-            img.src = uploadedImageData;
-        }
-
-        function decodeQRFromCanvas(canvas) {
-            // This is a simplified QR decoder - in production you'd use a robust library like jsQR
-            // For now, we'll use a basic implementation that works with our obfuscated QR codes
-            
-            const ctx = canvas.getContext('2d');
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            
-            // Reverse the obfuscation process
-            const data = imageData.data;
-            for (let y = 0; y < canvas.height; y++) {
-                for (let x = 0; x < canvas.width; x++) {
-                    const idx = (y * canvas.width + x) * 4;
-                    const maskPattern = 0x5;
                     
-                    if ((x + y) % 3 === maskPattern % 3) {
-                        // This is a simplified reversal - you'd need more sophisticated logic
-                        if (data[idx] === 255 && Math.random() > 0.5) {
-                            data[idx] = 0;     // R
-                            data[idx + 1] = 0; // G
-                            data[idx + 2] = 0; // B
+                    return canvas;
+                } catch (error) {
+                    console.error('QR generation error:', error);
+                    throw new Error('Failed to generate QR code: ' + error.message);
+                }
+            }
+
+            static scanFromCanvas(canvas) {
+                try {
+                    const context = canvas.getContext('2d');
+                    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+                    
+                    // Use jsQR to scan the QR code
+                    const code = jsQR(imageData.data, imageData.width, imageData.height, {
+                        inversionAttempts: "dontInvert",
+                    });
+                    
+                    if (code && code.data) {
+                        console.log('QR code detected:', code.data);
+                        return code.data;
+                    }
+                    return null;
+                } catch (error) {
+                    console.error('QR scan error:', error);
+                    throw new Error('Failed to scan QR code: ' + error.message);
+                }
+            }
+
+            static processImageFile(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = new Image();
+                        img.onload = () => {
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+                            
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+                            context.drawImage(img, 0, 0);
+                            
+                            try {
+                                const qrData = QRUtil.scanFromCanvas(canvas);
+                                resolve(qrData);
+                            } catch (error) {
+                                reject(error);
+                            }
+                        };
+                        img.onerror = () => reject(new Error('Failed to load image'));
+                        img.src = e.target.result;
+                    };
+                    reader.onerror = () => reject(new Error('Failed to read file'));
+                    reader.readAsDataURL(file);
+                });
+            }
+        }
+
+        // Camera utilities
+        class CameraUtil {
+            static async startCamera() {
+                try {
+                    const video = document.getElementById('video');
+                    const stream = await navigator.mediaDevices.getUserMedia({ 
+                        video: { facingMode: 'environment' } 
+                    });
+                    
+                    video.srcObject = stream;
+                    video.style.display = 'block';
+                    
+                    return new Promise((resolve) => {
+                        video.onloadedmetadata = () => {
+                            video.play();
+                            resolve(stream);
+                        };
+                    });
+                } catch (error) {
+                    console.error('Camera error:', error);
+                    throw new Error('Failed to access camera: ' + error.message);
+                }
+            }
+
+            static stopCamera(stream) {
+                if (stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                }
+                const video = document.getElementById('video');
+                video.style.display = 'none';
+                video.srcObject = null;
+            }
+
+            static captureFrame() {
+                const video = document.getElementById('video');
+                const canvas = document.getElementById('scanCanvas');
+                const context = canvas.getContext('2d');
+                
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                context.drawImage(video, 0, 0);
+                
+                return QRUtil.scanFromCanvas(canvas);
+            }
+        }
+
+        // UI utilities
+        class UIUtil {
+            static showStatus(elementId, message, type = 'info') {
+                const element = document.getElementById(elementId);
+                element.textContent = message;
+                element.className = `status ${type}`;
+                element.classList.remove('hidden');
+                
+                if (type === 'success' || type === 'error') {
+                    setTimeout(() => {
+                        element.classList.add('hidden');
+                    }, 5000);
+                }
+            }
+
+            static showElement(elementId) {
+                document.getElementById(elementId).classList.remove('hidden');
+            }
+
+            static hideElement(elementId) {
+                document.getElementById(elementId).classList.add('hidden');
+            }
+
+            static copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    UIUtil.showStatus('cameraStatus', 'Copied to clipboard!', 'success');
+                }).catch(() => {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    UIUtil.showStatus('cameraStatus', 'Copied to clipboard!', 'success');
+                });
+            }
+
+            static downloadCanvas(canvas, filename) {
+                const link = document.createElement('a');
+                link.download = filename;
+                link.href = canvas.toDataURL();
+                link.click();
+            }
+        }
+
+        // Event handlers
+        function initializeApp() {
+            // Login form
+            document.getElementById('loginForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const errorEl = document.getElementById('loginError');
+
+                if (Auth.login(username, password)) {
+                    Auth.showApp();
+                    errorEl.classList.add('hidden');
+                } else {
+                    errorEl.textContent = 'Invalid username or password';
+                    errorEl.classList.remove('hidden');
+                }
+            });
+
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', () => {
+                Auth.showLogin();
+                // Reset form
+                document.getElementById('loginForm').reset();
+            });
+
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and contents
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab + '-tab').classList.add('active');
+                });
+            });
+
+            // Generate QR code
+            document.getElementById('generateBtn').addEventListener('click', async () => {
+                const message = document.getElementById('messageInput').value;
+                const password = document.getElementById('encryptPassword').value;
+                const generateBtn = document.getElementById('generateBtn');
+
+                if (!message.trim()) {
+                    alert('Please enter a message to encrypt');
+                    return;
+                }
+
+                if (!password) {
+                    alert('Please enter an encryption password');
+                    return;
+                }
+
+                try {
+                    generateBtn.disabled = true;
+                    generateBtn.textContent = 'Generating...';
+                    
+                    const encrypted = CryptoUtil.encrypt(message, password);
+                    console.log('Encrypted data:', encrypted);
+                    
+                    await QRUtil.generateQR(encrypted);
+                    
+                    document.getElementById('encryptedText').textContent = encrypted;
+                    UIUtil.showElement('qrPreview');
+                    UIUtil.showElement('encryptResult');
+                    
+                    generateBtn.textContent = 'Generate Secure QR Code';
+                    generateBtn.disabled = false;
+                } catch (error) {
+                    console.error('Generation error:', error);
+                    alert('Error generating QR code: ' + error.message);
+                    generateBtn.textContent = 'Generate Secure QR Code';
+                    generateBtn.disabled = false;
+                }
+            });
+
+            // Save QR as PNG
+            document.getElementById('saveQrBtn').addEventListener('click', () => {
+                const canvas = document.getElementById('qrCanvas');
+                UIUtil.downloadCanvas(canvas, 'secure-qr-code.png');
+            });
+
+            // Copy encrypted data
+            document.getElementById('copyEncryptedBtn').addEventListener('click', () => {
+                const text = document.getElementById('encryptedText').textContent;
+                UIUtil.copyToClipboard(text);
+            });
+
+            // Camera controls
+            document.getElementById('startCameraBtn').addEventListener('click', async () => {
+                try {
+                    videoStream = await CameraUtil.startCamera();
+                    document.getElementById('startCameraBtn').disabled = true;
+                    document.getElementById('stopCameraBtn').disabled = false;
+                    UIUtil.showStatus('cameraStatus', 'Camera started. Position QR code in view.', 'success');
+                    
+                    // Start continuous scanning
+                    isScanning = true;
+                    scanLoop();
+                } catch (error) {
+                    UIUtil.showStatus('cameraStatus', error.message, 'error');
+                }
+            });
+
+            document.getElementById('stopCameraBtn').addEventListener('click', () => {
+                isScanning = false;
+                CameraUtil.stopCamera(videoStream);
+                videoStream = null;
+                document.getElementById('startCameraBtn').disabled = false;
+                document.getElementById('stopCameraBtn').disabled = true;
+                UIUtil.showStatus('cameraStatus', 'Camera stopped.', 'info');
+            });
+
+            // Manual decrypt from camera
+            document.getElementById('manualDecryptBtn').addEventListener('click', () => {
+                const password = document.getElementById('decryptPassword').value;
+                
+                if (!password) {
+                    alert('Please enter decryption password');
+                    return;
+                }
+
+                if (!videoStream) {
+                    alert('Please start camera first');
+                    return;
+                }
+
+                try {
+                    const qrData = CameraUtil.captureFrame();
+                    if (qrData) {
+                        const decrypted = CryptoUtil.decrypt(qrData, password);
+                        document.getElementById('decryptedText').textContent = decrypted;
+                        UIUtil.showElement('decryptResult');
+                        UIUtil.showStatus('cameraStatus', 'QR code decrypted successfully!', 'success');
+                    } else {
+                        UIUtil.showStatus('cameraStatus', 'No QR code detected in camera view.', 'error');
+                    }
+                } catch (error) {
+                    UIUtil.showStatus('cameraStatus', 'Decryption failed: ' + error.message, 'error');
+                }
+            });
+
+            // Upload and decrypt
+            document.getElementById('uploadDecryptBtn').addEventListener('click', async () => {
+                const fileInput = document.getElementById('fileInput');
+                const password = document.getElementById('uploadDecryptPassword').value;
+
+                if (!fileInput.files[0]) {
+                    alert('Please select an image file');
+                    return;
+                }
+
+                if (!password) {
+                    alert('Please enter decryption password');
+                    return;
+                }
+
+                try {
+                    UIUtil.showStatus('uploadStatus', 'Processing image...', 'info');
+                    const qrData = await QRUtil.processImageFile(fileInput.files[0]);
+                    
+                    if (qrData) {
+                        const decrypted = CryptoUtil.decrypt(qrData, password);
+                        document.getElementById('decryptedText').textContent = decrypted;
+                        UIUtil.showElement('decryptResult');
+                        UIUtil.showStatus('uploadStatus', 'QR code decrypted successfully!', 'success');
+                    } else {
+                        UIUtil.showStatus('uploadStatus', 'No QR code found in image.', 'error');
+                    }
+                } catch (error) {
+                    UIUtil.showStatus('uploadStatus', 'Error: ' + error.message, 'error');
+                }
+            });
+
+            // Copy decrypted message
+            document.getElementById('copyDecryptedBtn').addEventListener('click', () => {
+                const text = document.getElementById('decryptedText').textContent;
+                UIUtil.copyToClipboard(text);
+            });
+        }
+
+        // Continuous scanning loop
+        function scanLoop() {
+            if (!isScanning || !videoStream) return;
+
+            try {
+                const qrData = CameraUtil.captureFrame();
+                if (qrData) {
+                    const password = document.getElementById('decryptPassword').value;
+                    if (password) {
+                        try {
+                            const decrypted = CryptoUtil.decrypt(qrData, password);
+                            document.getElementById('decryptedText').textContent = decrypted;
+                            UIUtil.showElement('decryptResult');
+                            UIUtil.showStatus('cameraStatus', 'QR code detected and decrypted!', 'success');
+                            
+                            // Stop scanning after successful decode
+                            isScanning = false;
+                            return;
+                        } catch (error) {
+                            // Continue scanning if decryption fails
                         }
                     }
                 }
-            }
-            
-            ctx.putImageData(imageData, 0, 0);
-            
-            // For demo purposes, we'll simulate QR detection
-            // In a real implementation, you'd use jsQR or similar library
-            return simulateQRDetection(canvas);
-        }
-
-        function simulateQRDetection(canvas) {
-            // This is a placeholder that returns our test encrypted data
-            // In production, you'd use a proper QR detection library
-            
-            // For demo, let's assume we can detect if this looks like our QR
-            const ctx = canvas.getContext('2d');
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            
-            // Very basic pattern detection - check for QR-like patterns
-            let blackPixels = 0;
-            let totalPixels = canvas.width * canvas.height;
-            
-            for (let i = 0; i < imageData.data.length; i += 4) {
-                if (imageData.data[i] < 128) blackPixels++;
-            }
-            
-            const blackRatio = blackPixels / totalPixels;
-            
-            // If it looks like a QR code (roughly 40-60% black pixels)
-            if (blackRatio > 0.3 && blackRatio < 0.7) {
-                // For demo purposes, return the last generated encrypted data
-                // In production, this would be properly decoded
-                return encryptedData || null;
-            }
-            
-            return null;
-        }
-
-        function processScannedData(qrData) {
-            const password = document.getElementById('decryptPassword').value;
-            
-            if (!password) {
-                showAlert('Please enter decryption password', 'error');
-                return;
-            }
-            
-            try {
-                const decryptedMessage = decryptMessage(qrData, password);
-                
-                document.getElementById('decryptedMessage').textContent = decryptedMessage;
-                document.getElementById('scanResult').classList.remove('hidden');
-                
-                showAlert('QR code decrypted successfully!', 'success');
             } catch (error) {
-                showAlert('Decryption failed: ' + error.message, 'error');
+                console.error('Scan loop error:', error);
             }
+
+            // Continue scanning
+            setTimeout(scanLoop, 100);
         }
 
-        // Utility functions
-        function downloadQR() {
-            const canvas = document.querySelector('#qrCode canvas');
-            if (!canvas) {
-                showAlert('No QR code to download', 'error');
-                return;
-            }
-            
-            const link = document.createElement('a');
-            link.download = 'secure-qr-code.png';
-            link.href = canvas.toDataURL();
-            link.click();
-            
-            showAlert('QR code downloaded!', 'success');
-        }
+        // Initialize app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializeApp);
 
-        function copyEncrypted() {
-            if (!encryptedData) {
-                showAlert('No encrypted data to copy', 'error');
-                return;
-            }
-            
-            navigator.clipboard.writeText(encryptedData).then(() => {
-                showAlert('Encrypted data copied to clipboard!', 'success');
-            }).catch(() => {
-                showAlert('Failed to copy to clipboard', 'error');
+        // Service worker for offline capability
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(() => {
+                    // Silent fail - service worker is optional
+                });
             });
         }
-
-        function copyDecrypted() {
-            const message = document.getElementById('decryptedMessage').textContent;
-            if (!message) {
-                showAlert('No decrypted message to copy', 'error');
-                return;
-            }
-            
-            navigator.clipboard.writeText(message).then(() => {
-                showAlert('Decrypted message copied to clipboard!', 'success');
-            }).catch(() => {
-                showAlert('Failed to copy to clipboard', 'error');
-            });
-        }
-
-        function showAlert(message, type) {
-            const alert = document.getElementById('alert');
-            alert.textContent = message;
-            alert.className = `alert ${type} show`;
-            
-            setTimeout(() => {
-                alert.classList.remove('show');
-            }, 3000);
-        }
-
-        // Drag and drop functionality
-        const uploadArea = document.querySelector('.upload-area');
-        
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-        
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-        
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            
-            const files = e.dataTransfer.files;
-            if (files.length > 0 && files[0].type.startsWith('image/')) {
-                const input = document.getElementById('qrUpload');
-                input.files = files;
-                handleImageUpload({ target: input });
-            }
-        });
-
-        // Initialize app
-        window.addEventListener('load', () => {
-            console.log('Secure QR Code App loaded');
-        });
-
-        // Cleanup on page unload
-        window.addEventListener('beforeunload', () => {
-            stopScanning();
-        });
     </script>
 </body>
 </html>
